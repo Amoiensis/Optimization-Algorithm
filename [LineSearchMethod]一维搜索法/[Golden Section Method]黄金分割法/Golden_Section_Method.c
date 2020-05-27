@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h> 
-/*�ƽ�ָ
+/*Golden Section Method]黄金分割法
 Aouthor:Xipnig.Yu
 Date:2020.05.27 
 ------------ 
 min F(X)
-s.t. X��[a,b] 
+s.t. X¡Ê[a,b] 
 */ 
 double Function(double x);
 
