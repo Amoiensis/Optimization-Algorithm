@@ -63,9 +63,9 @@ The repositories will update constantly.
 
 本项目是最优化方法的相关算法的实现集合。
 
-【注意】本项目进行的C语言矩阵运算，使用的是自己行实现的“Matrix_hub”（链接如下）。因为现有的C语言矩阵运算包对于初学者的使用和了解并不很友好，所有特地实现一个易用的C矩阵库，希望能给你带来帮助，如有问题请和我联系~
+【注意】本项目进行的C语言矩阵运算，使用的是自己行实现的“[Matrix_hub](https://github.com/Amoiensis/Matrix_hub)”（链接）。因为现有的C语言矩阵运算包对于初学者的使用和了解并不很友好，所有特地实现一个易用的C矩阵库，希望能给你带来帮助，如有问题请和我联系~
 
-[Matrix_hub](https://github.com/Amoiensis/Matrix_hub)
+矩阵运算库：[Matrix_hub](https://github.com/Amoiensis/Matrix_hub)
 
 给出部分算法的解决思路和实现，希望能够对准备正在学习或者感兴趣的你有所帮助。
 
