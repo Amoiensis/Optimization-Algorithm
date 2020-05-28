@@ -55,9 +55,7 @@ https://github.com/Amoiensis/Optimization-Algorithm
 OVERVIEW
 ---------------------------------------
 
-Mathmatic Modeling Problems and Solutions for CUMCM (China Undergraduate Mathematical Contest in Modeling).
-
-This repositories is the collection of the Homework(Project) in the training for CUMCM.
+This project is a collection of related algorithms for optimization methods.
 
 The repositories will update constantly.
 
