@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <math.h> 
 #include "matrix.h"
-/*Grandient Method
-多元函数[高/二次]-梯度算法 
+/*Newton Method
+多元函数[高/二次]-牛顿法 
 Aouthor:Xipnig.Yu
-Date:2020.05.27 
+Date:2020.05.28 
 ------------ 
 min F(X)
 s.t. X∈R^n
