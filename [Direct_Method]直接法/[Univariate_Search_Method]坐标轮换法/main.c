@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <math.h> 
 #include "matrix.h"
-/*Conjugate Gradient Method
-多元函数[高/二次]-共轭梯度算法 
+/*Univariate_Search_Method
+多元函数[高/二次]-坐标轮换法 
 Aouthor:Xipnig.Yu
 Date:2020.05.27 
 ------------ 
@@ -20,8 +20,8 @@ int main(int argc, char *argv[]) {
 	/*Data + End gap*/
 	double (*Func)(Matirx*) = Function;
 //	MATRIX_TYPE _mat_X [1][2] = {2,1}; //Two-dimensional function
-	MATRIX_TYPE _mat_X [1][3] = {2,2,2}; //Three-dimensional function 
-	double deta = 0.01;
+	MATRIX_TYPE _mat_X [1][3] = {2,1,1}; //Three-dimensional function 
+	double deta = 0.0018;
 	double step_gradient = 0.01;
 	double step_lamda = 0.01;
 	/*Generate mat_X*/
@@ -29,28 +29,27 @@ int main(int argc, char *argv[]) {
 	int column = sizeof(_mat_X[0]) / sizeof(_mat_X[0][0]);
 	Matirx*  mat_X = Matrix_gen(row,column,_mat_X);
 	MATRIX_TYPE Mat_norm = 10*deta;
-	Matirx* mat_grandient_last = NULL,* mat_grandient = NULL,* mat_temp = NULL;
-	int times = 0;
+	Matirx* mat_grandient_last = NULL,* mat_X_gap = NULL,* mat_temp = NULL;
+	Matirx* mat_direction = Matrix_copy(mat_X);
 	double beta = 0;
+	int times = 0,i = 0;
 	/*Operation*/
-	int i;
-	for(i=0;i<column+1;i++){/*使用共轭梯度法，理论上只需要3次即收敛*/ 
-		mat_grandient_last = mat_grandient;
+	while(Mat_norm > deta){/*使用共轭梯度法，理论上只需要3次即收敛*/ 
+		i = times%(column);
 		if (times==0){
-			mat_grandient = Func_derivative(mat_X,step_gradient);
+			mat_direction->data[i] = 1;
 		}else{
-			mat_grandient = Func_derivative(mat_X,step_gradient);
-			beta = M_norm(mat_grandient,2)/M_norm(mat_grandient_last,2);
-			mat_temp = mat_grandient;
-			mat_grandient = M_add_sub(-1,mat_temp,beta,mat_grandient_last);
-			M_free(mat_temp);
+			mat_direction->data[i-1] = 0;
+			mat_direction->data[i] = 1;
 		}
-		step_lamda = Bisection_Method(mat_X,mat_grandient);
+		step_lamda = Bisection_Method(mat_X,mat_direction);
 		mat_temp = mat_X;
-		mat_X = M_add_sub(1,mat_temp,step_lamda,mat_grandient);
-		Mat_norm = M_norm(mat_grandient,2);
+		M_print(mat_X);
+		mat_X = M_add_sub(1,mat_temp,step_lamda,mat_direction);
+		M_print(mat_X);
+		mat_X_gap = M_add_sub(1,mat_X,1,mat_temp);
+		Mat_norm = M_norm(mat_X_gap,2);
 		M_free(mat_temp);
-		M_free(mat_grandient);
 		times ++;
 	}
 	printf("X* =\n");

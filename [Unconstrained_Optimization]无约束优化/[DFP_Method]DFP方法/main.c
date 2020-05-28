@@ -195,8 +195,8 @@ double Bisection_Method(Matirx* _mat_X, Matirx* _mat_gradient){/*Bisection_Metho
 min[lamda] F(x_k+lamda*d_k)
 二分法求解最优lamda值(X更新步长)*/
 	/*Data + End gap*/
-	double Left = 0;
-	double Right = 100;
+	double Left = -20;
+	double Right = 20;
 	double deta = 0.1;
 	double step = 0.1; 
 	/*Operation*/
