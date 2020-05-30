@@ -18,7 +18,7 @@ https://github.com/Amoiensis/Optimization-Algorithm
 [CONTENT](https://github.com/Amoiensis/Optimization-Algorithm)
 ---------------------------------------
 
-2. [Simplex Relaxation(LP)](https://github.com/Amoiensis/Optimization-Algorithm/tree/master/%5BSimplex_Method(LP)%5D%E5%8D%95%E7%BA%AF%E6%B3%95(%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92))
+1. [Simplex Relaxation(LP)](https://github.com/Amoiensis/Optimization-Algorithm/tree/master/%5BSimplex_Method(LP)%5D%E5%8D%95%E7%BA%AF%E6%B3%95(%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92))
 
         单纯形法（线性规划）
 
